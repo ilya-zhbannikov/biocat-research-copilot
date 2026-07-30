@@ -11,7 +11,7 @@ with col2:
     st.markdown("""
 # BioCAT Research Copilot: AI-powered literature discovery and omics interpretation
 
-Built with: PubMed, Llama 3.2, Streamlit and Ollama
+Built with: PubMed, Ollama Gemma4, and Streamlit
 """)
 
 
@@ -116,7 +116,7 @@ with tab1:
         col1, col2, col3 = st.columns(3)
         col1.metric("Papers Retrieved",len(papers))
         col2.metric("PMIDs",len(set([p["pmid"] for p in papers])))
-        col3.metric("Model", "Llama 3.2")
+        col3.metric("Model", "gemma4")
         
         st.download_button(
             "Download Summary",
@@ -190,7 +190,7 @@ with tab3:
         """
         
         # Generate response:
-        response = ollama.chat(model="llama3.2", messages=[{"role": "user", "content": prompt}])
+        response = ollama.chat(model="gemma4", messages=[{"role": "user", "content": prompt}])
         interpretation = response["message"]["content"]
         
         st.subheader("AI Pathway Interpretation")
@@ -312,7 +312,7 @@ transcriptomics ROI.
 """
 
             response = ollama.chat(
-                model="llama3.2",
+                model="gemma4", # model="llama3.2",
                 messages=[
                     {
                         "role": "user",
@@ -340,7 +340,7 @@ with tab6:
     BioCAT Research Copilot
 
     - PubMed Retrieval
-    - Local LLM (Llama 3.2)
+    - Local LLM (Gemma 4.0)
     - AI-assisted interpretation
     """)
 

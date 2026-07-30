@@ -15,7 +15,7 @@ load_dotenv()
 
 Entrez.email = os.getenv(
     "PUBMED_EMAIL",
-    "ilya.zhbannikov@duke.edu"
+    "your.email@somemail.com"
 )
 
 

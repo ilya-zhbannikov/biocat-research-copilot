@@ -5,7 +5,7 @@ Biologists often spend hours searching PubMed to interpret RNA-seq results.
 BioCAT Research Copilot automates literature retrieval and biological interpretation.
 
 ## Architecture
-User Query -> PubMed -> Abstract Retrieval -> Llama 3.2 -> Summary
+User Query -> PubMed -> Abstract Retrieval -> Gemma 4.0 -> Summary
 
 
 ## How to install and use

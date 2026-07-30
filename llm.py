@@ -35,6 +35,8 @@ Identify:
 4. Disease mechanisms
 5. Controversies
 6. Future directions
+7. Highlight what is not represented in literature
+
 
 Cite PMIDs.
 """
@@ -49,9 +51,12 @@ Cite PMIDs.
     #    ],
     #    temperature=0.2
     #)
-
+    # Use tool calling and gemma4:latest:
+    #response = ollama.chat( model=model_name, messages=messages, tools=[{ 'type': 'function', 'function': { 'name': 'web_search', 'description': 'Search the web for real-time live information', 'parameters': { 'type': 'object', 'properties': { 'query': {'type': 'string', 'description': 'The search query string'}, }, 'required': ['query'], }, }, }] )
+    
+    
     response = ollama.chat(
-        model="llama3.2",
+        model="gemma4",
         messages=[
             {
                 "role": "user",
